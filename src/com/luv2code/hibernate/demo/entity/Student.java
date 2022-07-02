@@ -1,6 +1,7 @@
 package com.luv2code.hibernate.demo.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "student")
@@ -19,6 +20,8 @@ public class Student {
 
     @Column(name = "email")
     private String email;
+
+    private List<Course> courses;
 
     public Student() {}
 
@@ -58,6 +61,14 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 
     @Override
